@@ -8,3 +8,21 @@ img {
     padding: 10px;
     width: 205px;
 }
+
+h1, h2, h3{
+    font-color: red;
+    font: sans-serif;
+}
+
+body {
+    background-color: #F4CCCC;
+     }
+
+.melonImg
+{   border: solid;
+    border-color: green;
+}
+
+.centerImg{
+    text-align: center;
+}

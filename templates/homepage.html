@@ -1,17 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>
-        
-    </title>
-</head>
-<body>
-<h1>UberMelon's Most Loved Melons</h1>
-<img src = 'http://www.rareseeds.com/assets/1/14/DimThumbnail/Sugar-Baby-Watermelon-web.jpg'/>
+{% extends 'base.html' %}
 
+
+{%block content%}
+<h1>UberMelon's Most Loved Melons</h1>
+<div class = 'centerImg'>
+    
+<img src = 'http://www.rareseeds.com/assets/1/14/DimThumbnail/Sugar-Baby-Watermelon-web.jpg'/>
+</div>
 <form action='/get-name' method ='GET'>
     <input type = 'text' name = 'firstName' required>
 </form>
-        
-</body>
-</html>
+{%endblock content%}   
+
