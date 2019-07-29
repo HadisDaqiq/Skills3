@@ -37,11 +37,31 @@ MOST_LOVED_MELONS = {
 @app.route('/')
 def home():
     """show homepage.html """
+    if session.get('first_name') is not None:
+        return redirect('/top-melons')
+
     return render_template('homepage.html')
+
+
+@app.route('/get-name')
+def name():
+    """add firstname from homepage input to session, redirect to 
+    top-melons route"""
+
+    #getting the name input value from form.
+    first_name = request.args.get('firstName')
+
+    # add first_name to the session
+    session['first_name'] = first_name
+    
+    return redirect('/top-melons')
+
 
 @app.route('/top-melons')
 def top_melons():
     """show top-melon.html temp"""
+    if session.get('first_name') is None:
+        return redirect('/')
 
 
     return render_template('top-melons.html', melons = MOST_LOVED_MELONS)

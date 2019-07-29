@@ -9,10 +9,11 @@
 
 <!-- Create a div for every Most Loved Melon using a Jinja for loop -->
   <div class='melon-div'>
-        {% for melon in melons %}
+        <h1> Welcome  {{session['first_name']}} </h1>
 
-        <h3>Name:{{melons[melon]['name']}}</h3>
-        <h2> Num Loves :{{melons[melon]['num_loves']}}</h2>
+        {% for melon in melons %}
+        <h3>{{session['first_name']}}, this is a {{melons[melon]['name']}}</h3>
+        <h2> Loves :{{melons[melon]['num_loves']}}</h2>
         <img src = "{{melons[melon]['img']}}" />
         
     {%endfor%}
